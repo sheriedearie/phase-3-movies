@@ -1,19 +1,16 @@
-# Create Bands
-puts "Creating bands..."
-run_dmc = Band.create(name: "Run-DMC", hometown: "NYC")
-bon_jovi = Band.create(name: "Bon Jovi", hometown: "NJ")
-guns_n_roses = Band.create(name: "Guns N' Roses", hometown: "Los Angeles")
-madonna = Band.create(name: "Madonna", hometown: "Bay City, MI")
-david_bowie = Band.create(name: "David Bowie", hometown: "London")
-duran_duran = Band.create(name: "Duran Duran", hometown: "Birmingham")
-rem = Band.create(name: "R.E.M.", hometown: "Athens, GA")
+puts "Creating movies..."
+mean_girls = Movie.create(title: "Mean Girls", box_office_earnings: 129_000_000)
+spice_world = Movie.create(title: "Spice World", box_office_earnings: 151_000_000)
 
-puts "Creating venues..."
-cbgb = Venue.create(title: "CBGB", city: "NYC")
-danceteria = Venue.create(title: "Danceteria", city: "NYC")
-the_roxy = Venue.create(title: "The Roxy", city: "Los Angeles")
-blitz = Venue.create(title: "Blitz", city: "London")
+puts "Creating actors..."
+lindsay_lohan = Actor.create(name: "Lindsay Lohan")
+tina_fey = Actor.create(name: "Tina Fey")
+baby_spice = Actor.create(name: "Emma Bunton")
+ginger_spice = Actor.create(name: "Geri Halliwell")
+scary_spice = Actor.create(name: "Melanie Brown")
+sporty_spice = Actor.create(name: "Melanie Chisholm")
+posh_spice = Actor.create(name: "Victoria Addams")
 
-# TODO: create Concert instances so you can test your relationships
+# TODO: create Role instances so you can test your associations!
 
 puts "Seeding done!"

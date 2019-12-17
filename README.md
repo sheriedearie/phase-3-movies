@@ -1,44 +1,41 @@
-# Object Relations Code Challenge - Concerts
+# Object Relations Code Challenge - Movies
 
 For this assignment, we'll be working with a Concert domain.
 
-We have three models: `Band`, `Concert`, and `Venue`.
+We have three models: `Movie`, `Role`, and `Actor`.
 
-For our purposes, a `Band` has many `Concerts`, a `Venue` has many `Concerts`s, and a `Concert` belongs to a `Band` and to a `Venue`.
+For our purposes, a `Movie` has many `Role`s, a `Actor` has many `Role`s, and a `Role` belongs to a `Movie` and to an `Actor`.
 
-`Band` - `Venue` is a many to many relationship.
+`Movie` - `Actor` is a many to many relationship.
 
 **Note**: You should draw your domain on paper or on a whiteboard _before you start coding_. Remember to identify a single source of truth for your data.
 
 ## What You Already Have
 
-The starter code has migrations and models for the initial Band and Venue models, and seed data for some Bands and Venues. The schema currently looks like this: 
+The starter code has migrations and models for the initial `Actor` and `Movie` models, and seed data for some `Actor`s and `Role`s. The schema currently looks like this: 
 
-#### Bands
+#### `actors` Table
 | Column      | Type      |
 | ------------| ----------|
 | name        | String    |
-| hometown    | String    |
 | created_at  | DateTime  |
 | updated_at  | DateTime  |
 
-#### Venues
-| Column      | Type      |
-| ----------- | --------- |
-| title       | String    |
-| city        | String    |
-| created_at  | DateTime  |
-| updated_at  | DateTime  |
+#### `movies` Table
+| Column                | Type      |
+| -----------           | --------- |
+| title                 | String    |
+| box_office_earnings    | Integer   |
+| created_at            | DateTime  |
+| updated_at            | DateTime  |
 
-You will need to create the migration for the Concert model using the attributes specified in the deliverables below.
+You will need to create the migration for the `roles` table using the attributes specified in the deliverables below.
 
 ## Topics
 
-- Classes and Instances
-- Class and Instance Methods
-- Variable Scope
+- Active Record Migrations
 - Object Relationships
-- Arrays and Array Methods
+- Active Record Queryng
 
 ## Instructions
 
@@ -68,56 +65,59 @@ TODO: decide if it's worth mentioning the methods Active Record already gives?
 
 ### Migrations
 
-- You will need to create a migration for the `Concert` model. 
-- A `Concert` belongs to a `Band`, and a `Concert` also belongs to a `Venue`. In your migration, create any columns your `Concert` table will need to establish these relationships.
-- A `Concert` also has a `date` attribute that should store a string.
-- After creating your migration, use the `seeds.rb` file to create instances of your `Concert` class so you can test your code.
+You will need to create a migration for the `roles` table. 
+
+- A `Role` belongs to a `Movie`, and a `Role` also belongs to an `Actor`. In your migration, create any columns your `roles` table will need to establish these relationships.
+- The `roles` table should also have:
+  - A `salary` column that should store an integer.
+  - A `character_name` column that should store a string.
+
+After creating your migration, use the `seeds.rb` file to create instances of your `Role` class so you can test your code.
+
+**Once you've set up your `Role` class**, work on building out the following deliverables. Use Active Record association macros and Active Record query methods where appropriate.
 
 ### Object Relationship Methods
 
-#### Concert
+#### Role
 
-- `Concert#band`
-  - should return the `Band` instance for this concert
-- `Concert#venue`
-  - should return the `Venue` instance for this concert
+- `Role#actor`
+  - should return the `Actor` instance for this role
+- `Role#movie`
+  - should return the `Movie` instance for this role
 
-#### Venue
+#### Movie
 
-- `Venue#concerts`
-  - returns a collection of all the concerts for the venue
-- `Venue#bands`
-  - returns a collection of all the bands that have performed at the venue
+- `Movie#roles`
+  - returns a collection of all the roles for the movie
+- `Movie#actors`
+  - returns a collection of all the actors who performed in the movie
 
-#### Band
+#### Actor
 
-- `Band#concerts`
-  - should return a collection of all the concerts that the band has performed
-- `Band#venues`
-  - should return a collection of all the venues that the band has played in
+- `Actor#roles`
+  - should return a collection of all the roles that the actor has played
+- `Actor#movies`
+  - should return a collection of all the movies that the actor has performed in
 
 ### Aggregate and Association Methods
 
-#### Concert
+#### Movie
 
-- `Concert#hometown_show?`
-  - returns `true` if the concert is in the band's hometown, `false` if it is not
+- `Movie#cast_role(actor, character_name, salary)`
+  - takes a `actor` (an instance of the `Actor` class), a `character_name` (string), and a `salary` (integer) as arguments, and creates a new `role` in the database associated with this movie and the actor
 
-#### Band
+#### Actor
 
-- `Band#play_in_venue(venue, date)`
-  - takes a venue and date (as a string) as arguments, and creates a new concert for the band in that venue on that date
-
-#### Venue
-
-- `Venue#concert_on(date)`
-  - takes a date (string) as argument
-  - finds and returns the first concert on that date at that venue
-  - if there is no concert on that date at that venue, returns `nil`
-- `Venue#most_frequent_band`
-  - returns the band with the most concerts at the venue
+- `Actor#total_salary`
+  - returns the total salary for an actor based on the salary for each of their roles
+- `Actor#blockbusters`
+  - returns a collection of all the `Movie` instances the actor has performed in that have a `box_office_earnings` of over $50,000,000
+- `Actor.most_successful`
+  - returns *one* actor instance for the actor who has the highest total salary for all their roles
 
 ## Rubric
+
+TODO: update with Active Record rubric
 
 ### Build classes using OO Ruby Syntax
 
