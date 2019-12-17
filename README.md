@@ -65,14 +65,14 @@ TODO: decide if it's worth mentioning the methods Active Record already gives?
 
 ### Migrations
 
-You will need to create a migration for the `roles` table. 
+Before creating your `Role` class, you will need to create a migration for the `roles` table. 
 
 - A `Role` belongs to a `Movie`, and a `Role` also belongs to an `Actor`. In your migration, create any columns your `roles` table will need to establish these relationships.
 - The `roles` table should also have:
-  - A `salary` column that should store an integer.
-  - A `character_name` column that should store a string.
+  - A `salary` column that stores an integer.
+  - A `character_name` column that stores a string.
 
-After creating your migration, use the `seeds.rb` file to create instances of your `Role` class so you can test your code.
+After creating your migration, create your `Role` class. Then use the `seeds.rb` file to create instances of your `Role` class so you can test your code.
 
 **Once you've set up your `Role` class**, work on building out the following deliverables. Use Active Record association macros and Active Record query methods where appropriate.
 
