@@ -10,27 +10,6 @@ For our purposes, a `Movie` has many `Role`s, a `Actor` has many `Role`s, and a 
 
 **Note**: You should draw your domain on paper or on a whiteboard _before you start coding_. Remember to identify a single source of truth for your data.
 
-## What You Already Have
-
-The starter code has migrations and models for the initial `Actor` and `Movie` models, and seed data for some `Actor`s and `Role`s. The schema currently looks like this: 
-
-#### `actors` Table
-| Column      | Type      |
-| ------------| ----------|
-| name        | String    |
-| created_at  | DateTime  |
-| updated_at  | DateTime  |
-
-#### `movies` Table
-| Column                | Type      |
-| -----------           | --------- |
-| title                 | String    |
-| box_office_earnings    | Integer   |
-| created_at            | DateTime  |
-| updated_at            | DateTime  |
-
-You will need to create the migration for the `roles` table using the attributes specified in the deliverables below.
-
 ## Topics
 
 - Active Record Migrations
@@ -52,6 +31,27 @@ Writing error-free code is more important than completing all of the deliverable
 Similarly, messy code that works is better than clean code that doesn't. First, prioritize getting things working. Then, if there is time at the end, refactor your code to adhere to best practices. 
 
 **Before you submit!** Save and run your code to verify that it works as you expect. If you have any methods that are not working yet, feel free to leave comments describing your progress.
+
+## What You Already Have
+
+The starter code has migrations and models for the initial `Actor` and `Movie` models, and seed data for some `Actor`s and `Role`s. The schema currently looks like this: 
+
+#### `actors` Table
+| Column      | Type      |
+| ------------| ----------|
+| name        | String    |
+| created_at  | DateTime  |
+| updated_at  | DateTime  |
+
+#### `movies` Table
+| Column                | Type      |
+| -----------           | --------- |
+| title                 | String    |
+| box_office_earnings    | Integer   |
+| created_at            | DateTime  |
+| updated_at            | DateTime  |
+
+You will need to create the migration for the `roles` table using the attributes specified in the deliverables below.
 
 ## Deliverables
 
