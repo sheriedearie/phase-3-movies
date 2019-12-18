@@ -101,10 +101,17 @@ After creating your migration, create your `Role` class. Then use the `seeds.rb`
 
 ### Aggregate and Association Methods
 
+### Role
+
+- `Role#credit`
+  - should return a string formatted as follows: "{insert character name}: Played by {insert actor name}"
+
 #### Movie
 
 - `Movie#cast_role(actor, character_name, salary)`
   - takes a `actor` (an instance of the `Actor` class), a `character_name` (string), and a `salary` (integer) as arguments, and creates a new `role` in the database associated with this movie and the actor
+- `Movie#all_credits`
+  - should return an Array of strings with all the roles for this movie formatted as follows: ["{insert character name}: Played by {insert actor name}", "{insert character name}: Played by {insert actor name}", ...]
 
 #### Actor
 
