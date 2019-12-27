@@ -1,3 +1,7 @@
+puts "Clearing old data..."
+Magazine.destroy_all
+Reader.destroy_all
+
 puts "Creating movies..."
 mean_girls = Movie.create(title: "Mean Girls", box_office_earnings: 129_000_000)
 spice_world = Movie.create(title: "Spice World", box_office_earnings: 151_000_000)

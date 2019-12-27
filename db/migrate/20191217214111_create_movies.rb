@@ -4,7 +4,6 @@ class CreateMovies < ActiveRecord::Migration[5.2]
       t.string :title
       t.integer :box_office_earnings
 
-      t.timestamps
     end
   end
 end
