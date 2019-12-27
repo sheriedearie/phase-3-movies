@@ -1,6 +1,6 @@
 puts "Clearing old data..."
-Magazine.destroy_all
-Reader.destroy_all
+Movie.destroy_all
+Actor.destroy_all
 
 puts "Creating movies..."
 mean_girls = Movie.create(title: "Mean Girls", box_office_earnings: 129_000_000)
