@@ -1,10 +1,10 @@
 # Object Relations Code Challenge - Movies
 
-For this assignment, we'll be working with a Concert domain.
+For this assignment, we'll be working with a Movie domain.
 
 We have three models: `Movie`, `Role`, and `Actor`.
 
-For our purposes, a `Movie` has many `Role`s, a `Actor` has many `Role`s, and a `Role` belongs to a `Movie` and to an `Actor`.
+For our purposes, a `Movie` has many `Roles`, a `Actor` has many `Roles`, and a `Role` belongs to a `Movie` and to an `Actor`.
 
 `Movie` - `Actor` is a many to many relationship.
 
@@ -34,16 +34,16 @@ Similarly, messy code that works is better than clean code that doesn't. First, 
 
 ## What You Already Have
 
-The starter code has migrations and models for the initial `Actor` and `Movie` models, and seed data for some `Actor`s and `Role`s. The schema currently looks like this: 
+The starter code has migrations and models for the initial `Actor` and `Movie` models, and seed data for some `Actors` and `Roles`. The schema currently looks like this: 
 
-#### `actors` Table
+#### Actors Table
 | Column      | Type      |
 | ------------| ----------|
 | name        | String    |
 | created_at  | DateTime  |
 | updated_at  | DateTime  |
 
-#### `movies` Table
+#### Movies Table
 | Column                | Type      |
 | -----------           | --------- |
 | title                 | String    |
@@ -60,8 +60,6 @@ Write the following methods in the classes in the files provided. Feel free to b
 Deliverables use the notation `#` for instance methods, and `.` for class methods.
 
 Remember: Active Record give your classes access to a lot of methods already! Keep in mind what methods Active Record gives you access to on each of your classes when you're approaching the deliverables below.
-
-TODO: decide if it's worth mentioning the methods Active Record already gives?
 
 ### Migrations
 
