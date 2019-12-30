@@ -55,20 +55,18 @@ Write the following methods in the classes in the files provided. Feel free to b
 
 Deliverables use the notation `#` for instance methods, and `.` for class methods.
 
-Remember: Active Record give your classes access to a lot of methods already! Keep in mind what methods Active Record gives you access to on each of your classes when you're approaching the deliverables below.
-
-TODO: decide if it's worth mentioning the methods Active Record already gives?
+Remember: Active Record give your classes access to a lot of built-in methods! Keep in mind what methods Active Record gives you access to on each of your classes when you're approaching the deliverables below.
 
 ### Migrations
 
-Before creating your `Role` class, you will need to create a migration for the `roles` table. 
+Before working on the rest of the deliverables, you will need to create a migration for the `roles` table. 
 
 - A `Role` belongs to a `Movie`, and a `Role` also belongs to an `Actor`. In your migration, create any columns your `roles` table will need to establish these relationships.
 - The `roles` table should also have:
   - A `salary` column that stores an integer.
   - A `character_name` column that stores a string.
 
-After creating your migration, create your `Role` class. Then use the `seeds.rb` file to create instances of your `Role` class so you can test your code.
+After creating your migration, use the `seeds.rb` file to create instances of your `Role` class so you can test your code.
 
 **Once you've set up your `Role` class**, work on building out the following deliverables. Use Active Record association macros and Active Record query methods where appropriate.
 
@@ -97,10 +95,10 @@ After creating your migration, create your `Role` class. Then use the `seeds.rb`
 
 ### Aggregate and Association Methods
 
-### Role
+#### Role
 
 - `Role#credit`
-  - should return a string formatted as follows: "{insert character name}: Played by {insert actor name}"
+  - should return a string formatted as follows: `{insert character name}: Played by {insert actor name}`
 
 #### Movie
 
