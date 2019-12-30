@@ -17,6 +17,11 @@ scary_spice = Actor.create(name: "Melanie Brown")
 sporty_spice = Actor.create(name: "Melanie Chisholm")
 posh_spice = Actor.create(name: "Victoria Addams")
 
-# TODO: create Role instances so you can test your associations!
+puts "Creating roles..."
+# ***********************************************************
+# * TODO: create roles! Remember, a role belongs to a movie *
+# * and a role belongs to an actor.                         *
+# ***********************************************************
+# Create Roles Here
 
 puts "Seeding done!"
