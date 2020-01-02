@@ -34,7 +34,7 @@ Similarly, messy code that works is better than clean code that doesn't. First, 
 
 ## What You Already Have
 
-The starter code has migrations and models for the initial `Actor` and `Movie` models, and seed data for some `Actors` and `Roles`. The schema currently looks like this: 
+The starter code has migrations and models for the initial `Actor` and `Movie` models, and seed data for some `Actors` and `Movies`. The schema currently looks like this: 
 
 #### Actors Table
 | Column      | Type      |
@@ -55,11 +55,7 @@ Write the following methods in the classes in the files provided. Feel free to b
 
 Deliverables use the notation `#` for instance methods, and `.` for class methods.
 
-<<<<<<< HEAD
 Remember: Active Record give your classes access to a lot of methods already! Keep in mind what methods Active Record gives you access to on each of your classes when you're approaching the deliverables below.
-=======
-Remember: Active Record give your classes access to a lot of built-in methods! Keep in mind what methods Active Record gives you access to on each of your classes when you're approaching the deliverables below.
->>>>>>> 2ddfc67c324cde9cde8b3df20826799d09f992b5
 
 ### Migrations
 
@@ -110,6 +106,9 @@ After creating your migration, use the `seeds.rb` file to create instances of yo
   - takes a `actor` (an instance of the `Actor` class), a `character_name` (string), and a `salary` (integer) as arguments, and creates a new `role` in the database associated with this movie and the actor
 - `Movie#all_credits`
   - should return an Array of strings with all the roles for this movie formatted as follows: ["{insert character name}: Played by {insert actor name}", "{insert character name}: Played by {insert actor name}", ...]
+- `Movie#fire_actor(actor)`
+  - takes an `actor` (an instance of the `Actor` class) and removes their role from this movie
+  - you will have to delete a row from the `roles` table to get this to work!
 
 #### Actor
 
@@ -126,6 +125,6 @@ After creating your migration, use the `seeds.rb` file to create instances of yo
 
 1. No associations, no foreign key on the table.
 2. Associations attempted in the model but are incorrect; foreign key is on a table but in the wrong spot.
-3. Relationships properly created. Associations lead to the correct behavior but may have used `has_one` or manually written out the methods the macro builds for us.
+3. Relationships properly created. Associations lead to the correct behavior but may have used the wrong macro or manually written out the methods the macro builds for us.
 4. Relationships properly created, save minor mistakes in advanced deliverables. May implement advanced query methods with iterators instead of using built-in methods.
 5. Relationships properly created. Advanced query methods use appropriate built-in methods.
