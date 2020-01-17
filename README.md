@@ -121,6 +121,13 @@ After creating your migration, use the `seeds.rb` file to create instances of yo
 
 ## Rubric
 
+### Active Record Associations
+1. No associations, no foreign key on the table.
+2. Associations attempted in the model but are incorrect; foreign key is on a table but in the wrong spot.
+3. Relationships properly created. Associations lead to the correct behavior but may have used the wrong macro or manually written out the methods the macro builds for us.
+4. Relationships properly created, save minor mistakes in advanced deliverables. May implement advanced query methods with iterators instead of using built-in methods.
+5. Relationships properly created. Advanced query methods use appropriate built-in methods.
+
 ### Build classes using OO Ruby Syntax
 
 1. Class code has a syntax or runtime error. Code does not run at all, or exits with an error, or most Object-oriented deliverables are not implemented.
