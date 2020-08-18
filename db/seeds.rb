@@ -1,4 +1,6 @@
-puts "Clearing old data..."
+# This will delete any existing rows from the Movie and Actor tables
+# so you can run the seed file multiple times without having duplicate entries in your database
+puts "Deleting movie/actor data..."
 Movie.destroy_all
 Actor.destroy_all
 
@@ -15,6 +17,11 @@ scary_spice = Actor.create(name: "Melanie Brown")
 sporty_spice = Actor.create(name: "Melanie Chisholm")
 posh_spice = Actor.create(name: "Victoria Addams")
 
-# TODO: create Role instances so you can test your associations!
+puts "Creating roles..."
+# ***********************************************************
+# * TODO: create roles! Remember, a role belongs to a movie *
+# * and a role belongs to an actor.                         *
+# ***********************************************************
+# Create Roles Here
 
 puts "Seeding done!"

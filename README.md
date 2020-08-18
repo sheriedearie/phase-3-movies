@@ -4,7 +4,7 @@ For this assignment, we'll be working with a Movie domain.
 
 We have three models: `Movie`, `Role`, and `Actor`.
 
-For our purposes, a `Movie` has many `Role`s, a `Actor` has many `Role`s, and a `Role` belongs to a `Movie` and to an `Actor`.
+For our purposes, a `Movie` has many `Roles`, a `Actor` has many `Roles`, and a `Role` belongs to a `Movie` and to an `Actor`.
 
 `Movie` - `Actor` is a many to many relationship.
 
@@ -34,14 +34,14 @@ Similarly, messy code that works is better than clean code that doesn't. First, 
 
 ## What You Already Have
 
-The starter code has migrations and models for the initial `Actor` and `Movie` models, and seed data for some `Actor`s and `Role`s. The schema currently looks like this: 
+The starter code has migrations and models for the initial `Actor` and `Movie` models, and seed data for some `Actors` and `Movies`. The schema currently looks like this: 
 
-#### `actors` Table
+#### Actors Table
 | Column      | Type      |
 | ------------| ----------|
 | name        | String    |
 
-#### `movies` Table
+#### Movies Table
 | Column                | Type      |
 | -----------           | --------- |
 | title                 | String    |
@@ -55,7 +55,7 @@ Write the following methods in the classes in the files provided. Feel free to b
 
 Deliverables use the notation `#` for instance methods, and `.` for class methods.
 
-Remember: Active Record give your classes access to a lot of built-in methods! Keep in mind what methods Active Record gives you access to on each of your classes when you're approaching the deliverables below.
+Remember: Active Record give your classes access to a lot of methods already! Keep in mind what methods Active Record gives you access to on each of your classes when you're approaching the deliverables below.
 
 ### Migrations
 
@@ -106,6 +106,9 @@ After creating the `roles` table using a migration, use the `seeds.rb` file to c
   - takes a `actor` (an instance of the `Actor` class), a `character_name` (string), and a `salary` (integer) as arguments, and creates a new `role` in the database associated with this movie and the actor
 - `Movie#all_credits`
   - should return an Array of strings with all the roles for this movie formatted as follows: ["{insert character name}: Played by {insert actor name}", "{insert character name}: Played by {insert actor name}", ...]
+- `Movie#fire_actor(actor)`
+  - takes an `actor` (an instance of the `Actor` class) and removes their role from this movie
+  - you will have to delete a row from the `roles` table to get this to work!
 
 #### Actor
 
@@ -119,9 +122,32 @@ After creating the `roles` table using a migration, use the `seeds.rb` file to c
 ## Rubric
 
 ### Active Record Associations
-
 1. No associations, no foreign key on the table.
 2. Associations attempted in the model but are incorrect; foreign key is on a table but in the wrong spot.
-3. Relationships properly created. Associations lead to the correct behavior but may have used `has_one` or manually written out the methods the macro builds for us.
+3. Relationships properly created. Associations lead to the correct behavior but may have used the wrong macro or manually written out the methods the macro builds for us.
 4. Relationships properly created, save minor mistakes in advanced deliverables. May implement advanced query methods with iterators instead of using built-in methods.
 5. Relationships properly created. Advanced query methods use appropriate built-in methods.
+
+### Build classes using OO Ruby Syntax
+
+1. Class code has a syntax or runtime error. Code does not run at all, or exits with an error, or most Object-oriented deliverables are not implemented.
+2. No syntax errors. Some deliverables function correctly. Mixes up syntax for class and instance methods, refers to variables in the wrong scope, or uses `self` incorrectly, leading to logical errors. Method and variable names do not correspond to their respective behavior or data types. Methods might be duplicated, or code includes unused methods without a clear purpose.
+3. Correct class syntax for the deliverables submitted. May be incomplete or missing deliverables. Most code generally expresses intent: method and variable names match their behaviors and data types. Methods are not duplicated. Code does not have unused or methods without a clear purpose.
+4. Correct class syntax for all of the submitted code. Code express intent: method and variable names indicate their behavior and data types. Some deliverables might not be complete. No methods are duplicated.
+5. Correct class syntax for all deliverables, all deliverables complete. Code expresses intent: method and variable names indicate their behavior and data types, with the correct pluralization. No methods are duplicated. All methods have a clear purpose. Shared functionality is factored out into helper methods. Appropriate use of attr\_\* macros.
+
+### Model relationships using Ruby
+
+1. Submitted code does not relate models to each other through methods or data.
+2. Models relate to each other, but incompletely. Relationship methods are missing or have logic errors, store data on the wrong model, or are missing a single source of truth.
+3. Models relate to each other as specified in the instructions. Data is stored on the correct models, relationship methods are defined on the right models, and the logic correctly implements the relationships. Aggregate methods using the relationships may be incomplete or have errors.
+4. Models relate to each other as specified in the instructions. Aggregate methods work, but might not use helper methods effectively.
+5. Models relate to each other as specified in the instructions. Aggregate methods use helper methods effectively.
+
+### Solve problems with collections of data
+
+1. Does not attempt to solve collections problems, or has syntax errors in collection code.
+2. Collections methods have runtime or logic errors. Collections methods may use the wrong iterators, have incorrect logic, or many of the collections methods are unimplemented.
+3. Some collections methods work correctly, though several might be unimplemented. Code may not use the appropriate built in method for each problem, or duplicate logic instead of using helper methods.
+4. All collections methods are implemented and function correctly. Most use appropriate higher-level built-in methods. Methods may duplicate logic instead of using helper methods.
+5. All collections methods implemented and function correctly, using appropriate higher-level built-in methods. Shared logic is factored out to helper methods.
