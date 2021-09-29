@@ -23,5 +23,9 @@ puts "Creating roles..."
 # * and a role belongs to an actor.                         *
 # ***********************************************************
 # Create Roles Here
+main_character = Actor.create(character_name: "Lindsay Lohan", salary: 1_000_000)
+main_character = Movie.create(character_name: "Tina Fey", salary: 1_000_000)
+secondary_character = Actor.create(character_name: "Lindsay Lohan", salary: 1_000_000) 
+secondary_character = Movie.create(character_name: "Tina Fey", salary: 2_000_000) 
 
 puts "Seeding done!"
